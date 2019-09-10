@@ -1,9 +1,14 @@
 # golang_and_ajax
 
+---
+### 今回挑戦したこと
+
 - golangでjsonをファイル出力
 - ajax(jQuery)でjsonをHTMLに出力する
 
-### 将来的にやりたいこと
+
+---
+### 将来的にやりたいこと(TODO:)
 
 - HTML(Web)サーバーとAPIサーバの連携
 
