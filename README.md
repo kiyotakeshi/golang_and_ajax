@@ -1,11 +1,16 @@
 # golang_and_ajax
 
 ---
-### 今回挑戦したこと
+### 今回挑戦したかったこと
 
 - golangでjsonをファイル出力
 - ajax(jQuery)でjsonをHTMLに出力する
 
+---
+### 前提知識として勉強しなければいけないところ
+
+- JavaScript
+- HTML(POSTについて)
 
 ---
 ### 将来的にやりたいこと(TODO:)
