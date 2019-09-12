@@ -20,7 +20,7 @@ func main() {
 		ID:      1,
 		Name:    "Gopher",
 		Email:   "gopher@example.org",
-		Age:     5,
+		Age:     10,
 		Address: "",
 		memo:    "golang lover",
 	}
