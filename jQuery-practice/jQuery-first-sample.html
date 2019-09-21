@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery test</title>
+
+    <!-- サーバ側に配置したものを利用する場合 -->
+    <script src="jquery-3.4.1.min.js"></script>
+
+    <!-- CDNを利用する場合 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+    <script>
+        // jQueryの主な機能はHTML, CSSを操作すること
+        jQuery(function ($) {
+            // 操作対象とするHTMLを選択する際、CSSのセレクター構文がそのまま使える
+            $("#color_div").css("border", "1px solid red")
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="color_div">ここのdivの枠線をjQueryで変更</div>
+</body>
+
+</html>
