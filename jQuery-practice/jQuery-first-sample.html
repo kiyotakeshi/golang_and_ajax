@@ -13,8 +13,13 @@
 
     <script>
         // jQueryの主な機能はHTML, CSSを操作すること
+        // HTMLの読み込みが完了した時点で、functionの中身が実行される
+        // functionをつけなければ、JavaScriptは上から順に処理するため、
+        // #color_div の登場に、該当のHTMLが登場していないため、処理ができない
         jQuery(function ($) {
+
             // 操作対象とするHTMLを選択する際、CSSのセレクター構文がそのまま使える
+            // セレクタでdiv要素を選択し、返ってきたjQueryオブジェクトに対して .css メソッドを適用
             $("#color_div").css("border", "1px solid red")
         });
     </script>

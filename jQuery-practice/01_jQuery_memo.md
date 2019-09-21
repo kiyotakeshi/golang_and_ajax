@@ -1,0 +1,2 @@
+- DOM(Document Object Model)
+    - JavaScriptなどのプログラムから操作できるようにするための文書オブジェクトモデル

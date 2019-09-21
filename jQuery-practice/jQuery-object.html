@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Object</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>jQuery Object</h1>
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>orange</li>
+    </ul>
+    <script>
+        // jQueryを使用せず、JSでli要素を取得(ブラウザのconsoleに表示)
+        var li = document.getElementsByTagName("li");
+        console.log("li")
+        console.log(li);
+        // li要素が取得される
+        // HTMLCollection(3) [li, li, li]
+
+        // jQueryを使用
+        var jQli = $("li");
+        console.log("jQli")
+        console.log(jQli)
+        // jQueryのメソッドを持つDOM(HTML)要素、jQueryオブジェクトが取得される
+        // jQueryの機能により包まれるイメージのため、jQuery wrapperとも呼ばれる
+        // k.fn.init(3) [li, li, li, prevObject: k.fn.init(1)]
+
+        // li全要素の文字色を変更
+        $("li").css("color", "red");
+
+        // CSSの値を取得
+        var color = $(li).css("color");
+        console.log(color)
+        // rgb(255, 0, 0)
+
+    </script>
+</body>
+
+</html>
