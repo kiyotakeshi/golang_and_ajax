@@ -9,8 +9,10 @@
 ---
 ### 前提知識として勉強しなければいけないところ
 
-- JavaScript
-- HTML(POSTについて)
+- [以下のリポジトリで基礎は学習済み](https://github.com/kiyotakeshi/static_practice)
+
+- ~~JavaScript~~
+- ~~HTML(POSTについて)~~
 
 ---
 ### 将来的にやりたいこと(TODO:)
