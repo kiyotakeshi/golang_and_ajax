@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>selector</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Selector</h1>
+    <h2>Tag selector</h2>
+    <h3>Group selector</h3>
+    <script>
+        jQuery(function ($) {
+            // 要素(タグ)セレクター
+            // 要素(タグ)名を元に対象要素を選択
+            $("h2").css("color", "red");
+
+            // 複数指定(グループセレクター)
+            $("h1, h3").css("color", "blue");
+        });
+    </script>
+
+    <ul>
+        <li class="man">Taro</li>
+        <li class="man">Ichiro</li>
+        <li class="woman">Hanako</li>
+    </ul>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+    </ul>
+    <script>
+        jQuery(function ($) {
+            // クラスセレクター
+            // 特定のクラス名を元に対象要素を選択
+            $(".man").css("color", "red");
+
+            // firstはマッチした要素の中から最初の要素だけ選択
+            // HTML全体のliの最初の要素であるTaroの文字色が黄色に変わる
+            // Taroはクラスセレクターの指定で赤色にしたが、こちらの評価の方が後のため黄色で表示
+            $("li:first").css("color", "yellow");
+
+            // first-childは親要素に対する最初の子要素を全て選択(Taro,Apple,Mike)
+            $("li:first-child").css("font-size", "30px");
+        });
+    </script>
+
+    <ul>
+        <li id="mike">Mike</li>
+        <li>Tom</li>
+        <li>Jessie</li>
+        <script>
+            jQuery(function ($) {
+
+                // IDセレクター
+                // 特定のIDを元に対象要素を選択
+                $("#mike").css("color", "red");
+
+                // グループセレクター(他のセレクター同士でも組み合わせられる)
+                // $("h1, .man, #mike").css("color", "yellow");
+            });
+        </script>
+    </ul>
+
+    <a href="" target="_blank">pink</a>
+    <a href="" target="_self">blue</a>
+    <a href="" target="_parent">red</a>
+    <a href="" target="_top" class="fruit">green</a>
+    <script>
+        jQuery(function ($) {
+            $("a[target='_blank']").css("color", "pink");
+            $("a[target='_self']").css("color", "blue");
+            $("a[target='_parent']").css("color", "red");
+            $(".fruit[target='_top']").css("color", "green");
+
+            // ユニバーサルセレクター
+            $("*").css("background-color", "gray");
+        });
+    </script>
+
+    <table width="400" border="1">
+        <tr>
+            <th>社員番号</th>
+            <th>名前</th>
+            <th>年齢</th>
+            <th>性別</th>
+            <th>血液型</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>田中</td>
+            <td>25歳</td>
+            <td>男性</td>
+            <td>A型</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>山田</td>
+            <td>24歳</td>
+            <td>男性</td>
+            <td>O型</td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>高橋</td>
+            <td>21歳</td>
+            <td>女性</td>
+            <td>A型</td>
+        </tr>
+    </table>
+    <script>
+        jQuery(function ($) {
+            // $("td").css("background-color", "pink");
+
+            // 社員の名前部分のみピンクにする
+            // nth-childはCSSに準拠するため1から数える
+            $("td:nth-child(2)").css("background-color", "pink");
+        });
+    </script>
+</body>
+
+</html>
