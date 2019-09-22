@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.yahoo.co.jp/" id="yahoo">Yahoo</a>
+    <a href="http://www.google.co.jp/">Google</a>
+    <img id="myphoto" src="myphoto.jpg" />
+    <img src="taro.jpg" alt="Taro" title="15age" />
+    <img src="jiro.jpg" alt="Jiro" title="10age" />
+    <img src="ichiro.jpg" alt="Ichiro" title="8age" />
+    <script>
+        jQuery(function ($) {
+            // 属性を取得
+            var yahoo_url = $("#yahoo").attr("href");
+            console.log(yahoo_url) // http://www.yahoo.co.jp/
+
+            // マッチした最初の要素が取得される
+            var url = $("a").attr("href");
+            console.log(url) // http://www.yahoo.co.jp/
+
+            // 属性に値(alt)を設定
+            $('#myphoto').attr('alt', 'jQuery_value_set_test');
+
+            // マッチした要素の全てに第2引数で指定する関数を実行、戻り値を属性値に設定
+            // var img = $('img').attr("tittle", function(index, attr){
+            // return "[" + index + "]" + attr + this.alt;
+            // });
+            // 以下のように書き換えられる
+            // <img src="taro.jpg" alt="Taro" title="[0]15ageTaro" />
+
+            // 指定した要素を削除
+            // $("img").removeAttr("alt");
+        });
+    </script>
+
+    <style type="text/css">
+        .woman {
+            background-color: pink;
+        }
+
+        .boldme {
+            font-weight: bold;
+        }
+    </style>
+
+    <ul>
+        <li>Mike</li>
+        <li>John</li>
+        <li id="jessie">Jessie</li>
+    </ul>
+    <span id="clickme">Click here!!!</span>
+
+    <script>
+        jQuery(function ($) {
+            // 指定されたクラス名をマッチした要素に付与
+            $("#jessie").addClass("woman");
+
+            // 削除
+            // $("#jessie").removeClass"woman");
+
+            // .toggleClassは該当クラスがあれば削除し、無ければ追加する
+            $('#clickme').on("click", function () {
+
+                // クリックするごとに太字と元に戻るを繰り返す
+                $('#clickme').toggleClass("boldme");
+            })
+        });
+    </script>
+
+    <style>
+        #outside {
+            width: 100px;
+        }
+
+        #inside {
+            width: 50%;
+        }
+    </style>
+
+    <div id="outside">
+        <div id="inside">
+        </div>
+    </div>
+    <div id="alone"></div>
+
+    <script>
+        jQuery(function ($) {
+            // .widthは整数値で返すため計算ですぐに使える
+            var ret1 = $("#outside").width();
+            var ret_css_with = $("#outside").css("width");
+            var ret2 = $("#inside").width();
+
+            console.log(ret1); // 100
+            console.log(ret_css_with); // 100px
+            console.log(ret2); // 50
+
+            // 幅を設定
+            $("#alone").width(200);
+        });
+    </script>
+
+</body>
+
+</html>

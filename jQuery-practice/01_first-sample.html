@@ -22,13 +22,23 @@
             // セレクタでdiv要素を選択し、返ってきたjQueryオブジェクトに対して .css メソッドを適用
             // 操作後もjQueryオブジェクトを返すことが多いため、操作を繋げて書くことも可能(メソッドチェーン)
             $("#color_div").css("border", "1px solid red").css("color", "red");
+
+            // mapでまとめて設定
+            $("#map").css({
+                // 'background-color': 'pink',
+                // 'font-weight': 'bold',
+                // camel caseで書く
+                backgroundColor: 'pink',
+                fontWeight: 'bold',
+                color: 'blue'
+            });
         });
     </script>
-
 </head>
 
 <body>
     <div id="color_div">ここのdivの枠線をjQueryで変更</div>
+    <div id="map">CSSの設定をjQueryでまとめて適用</div>
 </body>
 
 </html>
