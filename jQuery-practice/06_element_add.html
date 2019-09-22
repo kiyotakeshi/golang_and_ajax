@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Element add</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Element add</h1>
+    <ul>
+        <li>Jiro</li>
+        <li>Jessie</li>
+    </ul>
+
+    <script>
+        jQuery(function ($) {
+
+            // 新規作成した要素を特定の位置に移動
+            $("ul").prepend($("<li>Taro</li>")); // マッチした要素の先頭に挿入
+            $("ul").append($("<li>Hanako</li>")); // マッチした要素の最後に挿入
+            $("ul").before($("<p>名前</p>")); // マッチした要素の直前に挿入
+            $("ul").after($("<p>生年月日</p>")); // マッチした要素の直後に挿入
+        });
+    </script>
+</body>
+
+</html>

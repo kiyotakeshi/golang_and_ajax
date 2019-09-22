@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Ajax</h1>
+
+    <form>
+        <input type="button" id="sample1" value="サンプル1">
+    </form>
+
+    <script>
+        jQuery(function ($) {
+            $("#sample1").on("click", function () {
+                $.ajax({
+                    url: './ajax-sample.txt',
+                    type: "GET",
+                    dataType: "text",
+                    success: function (data) {
+                        console.log(data);
+                    }
+                })
+            });
+            
+        });
+    </script>
+</body>
+
+</html>

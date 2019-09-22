@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>json read by ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            // 全体的に処理がわからないからJavaScriptから学習し直す必要あり
+            $("#click").on("click", function () {
+                $.ajax({
+                    type: 'GET',
+                    url: "http://localhost:3000/movies",
+                }).done(function (data) {
+                    // console.log(data);
+
+                    data.forEach(element => {
+                        // console.log(element.id);
+                        // console.log(element.name);
+                        // console.log(element.director);
+                        // console.log(element.rating);
+
+                        var liElements = $('<li></li>');
+                        $("#ajax-practice").append(liElements);
+                        liElements.text(' id:' + element.id + ' name:' + element.name + ' director:' + element.director + ' rating:' + element.rating);
+                    });
+                })
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1 id="click">Ajax practice</h1>
+    <ul id="ajax-practice"></ul>
+</body>
+
+</html>
+
+</html>
