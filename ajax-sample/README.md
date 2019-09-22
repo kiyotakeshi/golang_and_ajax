@@ -66,9 +66,6 @@ $ cat db.json
 ```
 $ json-server --watch db.json
 
-```
-$ json-server --watch db.json
-
   \{^_^}/ hi!
 
   Loading db.json
