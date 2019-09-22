@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -7,22 +7,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         jQuery(function ($) {
-            // 全体的に処理がわからないからJavaScriptから学習し直す必要あり
+
+            // h1タグ要素をクリックするとJSONの値をliタグで表示
             $("#click").on("click", function () {
                 $.ajax({
                     type: 'GET',
                     url: "http://localhost:3000/movies",
+
+                    // メソッドチェーンで取得したjQueryオブジェクトのメソッドを実行
                 }).done(function (data) {
+
+                    // ブラウザで取得できているか確認
                     // console.log(data);
 
+                    // JSONのkeyからvalueを取り出す
                     data.forEach(element => {
                         // console.log(element.id);
                         // console.log(element.name);
                         // console.log(element.director);
                         // console.log(element.rating);
 
+                        // ulタグの子要素として埋め込む
                         var liElements = $('<li></li>');
                         $("#ajax-practice").append(liElements);
+
+                        // ブラウザで表示する際にkeyがわかるように文字列を結合
                         liElements.text(' id:' + element.id + ' name:' + element.name + ' director:' + element.director + ' rating:' + element.rating);
                     });
                 })
@@ -32,7 +41,10 @@
 </head>
 
 <body>
-    <h1 id="click">Ajax practice</h1>
+    <!-- Ajaxを発火させるためにidを設定 -->
+    <h1 id="click">Ajax practice(Click here!!!)</h1>
+
+    <!-- Ajaxで取得したJSONの値をliタグの要素として埋め込む -->
     <ul id="ajax-practice"></ul>
 </body>
 
