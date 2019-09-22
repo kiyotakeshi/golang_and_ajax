@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Text Form operation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Text Form operation</h1>
+    <ul>
+        <li><span>Taro</span></li>
+        <li><span>Jiro</span></li>
+        <li><span>Jessie</span></li>
+    </ul>
+    <ul>
+        <li id="taro">Taro</li>
+        <li id="jiro">Jiro</li>
+        <li>Jessie</li>
+    </ul>
+
+    <script>
+        jQuery(function ($) {
+
+            // .htmlはマッチした要素の最初のHTMLの中身を取得
+            var ret1 = $("li").html();
+
+            // .textはマッチした要素全てからテキストだけを抽出
+            var ret2 = $("li").text();
+
+            console.log(ret1) // <span>Taro</span>
+            console.log(ret2) // TaroJiroJessie
+
+            // 要素の書き換え
+            $("#taro").html("<span style='color:red'>Ichiro</span>"); // HTMLとしてデータを書き換え
+            $("#jiro").text("<span style='color:blue'>Momo-Taro</span>"); // HTMLがエスケープされタグの形のまま出力
+        });
+    </script>
+
+    <form>
+        <select id="myselect">
+            <option value="">下から選択してください</option>
+            <option value="taro">Taro</option>
+            <option value="jiro">Jiro</option>
+            <option value="jessie">Jessie</option>
+        </select>
+
+        <input type="button" value="valueを取得" id="get_val">
+        <input type="button" value="textを取得" id="get_text">
+    </form>
+    <script>
+        jQuery(function($){
+
+            // 選択しているセレクトボックスの値を取得
+            $("#get_val").on("click", function(){
+                var ret3 = $("#myselect").val();
+                console.log(ret3) // taro
+            })
+
+            // 選択しているセレクトボックスのテキストの取得
+            $("#get_text").on("click", function(){
+                var ret4 = $("#myselect option:selected").text();
+                console.log(ret4) // Taro
+            })
+        });
+    </script>
+</body>
+
+</html>
